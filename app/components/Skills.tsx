@@ -16,9 +16,9 @@ export default function Skills() {
       aria-labelledby="skills-heading"
       className="border-t border-slate-800 py-20"
     >
-      <h2 id="skills-heading" className="text-3xl font-bold">
+      <h1 id="skills-heading" className="text-3xl font-bold">
         Skills & tools
-      </h2>
+      </h1>
 
       <p className="mt-4 text-lg text-slate-300">
         The technologies I work with and learn.

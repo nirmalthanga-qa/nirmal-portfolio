@@ -18,9 +18,9 @@ export default function Contact() {
       aria-labelledby="contact-heading"
       className="border-t border-slate-800 py-20"
     >
-      <h2 id="contact-heading" className="text-3xl font-bold">
+      <h1 id="contact-heading" className="text-3xl font-bold">
         Let’s connect
-      </h2>
+      </h1>
 
       <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-300">
         Interested in discussing quality engineering, test automation,
