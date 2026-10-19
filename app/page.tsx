@@ -1,11 +1,10 @@
 import Link from "next/link";
+import Greeting from "./components/Greeting";
 
 export default function Home() {
   return (
     <section id="home" className="py-24 sm:py-32">
-      <p className="mb-4 text-lg font-medium text-teal-400">
-        வணக்கம்! I’m Nirmal.
-      </p>
+      <Greeting />
 
       <h1 className="text-4xl font-bold leading-tight sm:text-6xl">
         Senior SDET.
