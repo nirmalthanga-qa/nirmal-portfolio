@@ -18,7 +18,7 @@ export default function Greeting() {
       <span lang={showTamil ? "ta" : "en"}>
         {showTamil ? "வணக்கம்" : "Welcome"}
       </span>
-      ! I’m Nirmal.
+      ! I’m Nirmal Kumar.
     </p>
   );
 }

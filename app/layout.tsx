@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nirmal | SDET - Quality Engineer",
+  title: "Nirmal | SDET - Quality",
   description:
     "Nirmal’s personal portfolio: 8 years in quality engineering, with experience in Playwright, TypeScript, API testing, GitHub Actions, and Docker.",
 };
@@ -26,16 +26,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{
+      <body id="top" className="bg-slate-900 font-sans text-slate-50 antialiased">
         <div className="flex min-h-screen flex-col bg-slate-950 text-white">
-  <Navbar />
+          <Navbar />
 
-  <main className="mx-auto w-full max-w-5xl flex-1 px-6">
-    {children}
-  </main>
+          <main className="w-full flex-1">
+            {children}
+          </main>
 
-  <Footer name="Nirmal" />
-</div>}</body>
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }

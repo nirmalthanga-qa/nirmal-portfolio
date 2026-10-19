@@ -2,7 +2,7 @@ type ProjectCardProps = {
   title: string;
   description: string;
   technologies: string[];
-  status: string;
+  status?: string;
 };
 
 export default function ProjectCard({
@@ -12,10 +12,14 @@ export default function ProjectCard({
   status,
 }: ProjectCardProps) {
   return (
-    <article className="rounded-xl border border-slate-800 bg-slate-900 p-6">
-      <p className="text-sm font-medium text-teal-400">{status}</p>
+    <article className="rounded-xl border border-slate-800 p-6">
+      {status && (
+        <p className="mb-3 text-sm font-medium text-teal-400">
+          {status}
+        </p>
+      )}
 
-      <h3 className="mt-3 text-xl font-semibold">{title}</h3>
+      <h3 className="text-xl font-semibold">{title}</h3>
 
       <p className="mt-3 leading-relaxed text-slate-300">
         {description}

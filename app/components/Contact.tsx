@@ -1,13 +1,13 @@
 const contact = {
-  email: "nirmal.thanga@gmail.com",
+  email: "nirmalthanga.qa@gmail.com",
   github: "https://github.com/nirmalthanga-qa",
   linkedin: "https://www.linkedin.com/in/nirmal-thanga",
 };
 
 export default function Contact() {
   const linkStyle =
-    "inline-flex rounded-lg border border-slate-700 px-5 py-3 " +
-    "font-medium text-slate-200 transition-colors " +
+    "inline-flex rounded-lg border border-portfolio-border px-5 py-3 " +
+    "font-medium text-portfolio-text transition-colors " +
     "hover:border-teal-400 hover:text-teal-400 " +
     "focus-visible:outline-2 focus-visible:outline-offset-4 " +
     "focus-visible:outline-teal-400";
@@ -16,13 +16,13 @@ export default function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="border-t border-slate-800 py-20"
+      className="border-t border-portfolio-border mx-auto w-full max-w-7xl px-6 py-20"
     >
       <h1 id="contact-heading" className="text-3xl font-bold">
         Let’s connect
       </h1>
 
-      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-slate-300">
+      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-portfolio-muted">
         Interested in discussing quality engineering, test automation,
         or something I’m building? Get in touch.
       </p>

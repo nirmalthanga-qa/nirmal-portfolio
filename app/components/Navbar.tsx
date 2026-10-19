@@ -1,4 +1,5 @@
 import Link from "next/link";
+import RotatingRole from "./RotatingRole";
 
 const links = [
   { href: "/", label: "Home" },
@@ -10,21 +11,34 @@ const links = [
 
 export default function Navbar() {
   return (
-    <header className="border-b border-slate-800">
+    <header className="border-b border-slate-700">
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-6 py-5"
+        className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 py-5"
       >
-        <Link href="/" className="text-xl font-bold text-teal-400">
-          Nirmal.
-        </Link>
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <Link
+            href="/"
+            className="text-xl font-bold text-white"
+          >
+            Nirmal Kumar
+          </Link>
+
+          <span aria-hidden="true" className="text-slate-400">
+            |
+          </span>
+
+          <div className="text-base font-semibold text-teal-400 sm:min-w-[15rem]">
+            <RotatingRole />
+          </div>
+        </div>
 
         <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-slate-300">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="hover:text-teal-400"
+              className="transition-colors hover:text-teal-400"
             >
               {link.label}
             </Link>

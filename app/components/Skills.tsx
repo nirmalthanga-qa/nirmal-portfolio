@@ -1,12 +1,27 @@
 const skills = [
-  { name: "Playwright", description: "UI and API test automation" },
-  { name: "TypeScript", description: "My primary automation language" },
-  { name: "Postman", description: "Manual API validation" },
-  { name: "GitHub Actions", description: "Automated CI workflows" },
-  { name: "Docker", description: "Container-based environments" },
-  { name: "Cypress", description: "Previous E2E automation experience" },
-  { name: "Accessibility", description: "Testing inclusive user experiences" },
-  { name: "k6", description: "Foundational performance testing knowledge" },
+  {
+    name: "Software QA Concepts",
+    description:
+      "SDLC, STLC, test planning, test design techniques, defect lifecycle, " +
+      "functional testing, regression testing, smoke testing, and exploratory testing",
+  },
+  { name: "TypeScript", description: "Building maintainable automation code using type safety, interfaces, reusable functions, and asynchronous programming." },
+  { name: "Playwright", description: "Automating UI and API tests with reliable locators, assertions, fixtures, and cross-browser execution." },
+  { name: "Postman", description: "Validating APIs through requests, response checks, authentication, collections, and environment variables." },
+  { name: "GitHub Actions", description: "Running automated tests in CI pipelines and publishing test results to support release decisions." },
+  { name: "Docker", description: "Creating consistent, container-based environments for running applications and automated tests." },
+  { name: "Cypress", description: "Previous experience automating web application workflows using JavaScript, assertions, and network interception." },
+  { name: "Accessibility Testing", description: "Evaluating accessibility through manual keyboard navigation, JAWS and NVDA screen readers, and color contrast checks." },
+  { name: "k6", description: "Foundational knowledge of performance testing, including virtual users, load scenarios, response times, and thresholds." },
+  { name: "AI Quality Engineering", description: "Exploring AI-assisted test design, automation, and defect analysis, alongside evaluating AI-generated responses for accuracy and consistency." },
+  {
+    name: "Test Management",
+    description: "Managing defects and work items with Jira, documentation with Confluence, and test cases and execution with TestRail and Zephyr.",
+  },
+  {
+    name: "Methodologies",
+    description: "Working within Agile Scrum practices, with foundational knowledge of SAFe, to support collaborative testing and continuous improvement.",
+  },
 ];
 
 export default function Skills() {
@@ -14,13 +29,13 @@ export default function Skills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="border-t border-slate-800 py-20"
+      className="border-t border-portfolio-border mx-auto w-full max-w-7xl px-6 py-20"
     >
       <h1 id="skills-heading" className="text-3xl font-bold">
         Skills & tools
       </h1>
 
-      <p className="mt-4 text-lg text-slate-300">
+      <p className="mt-4 text-lg text-portfolio-muted">
         The technologies I work with and learn.
       </p>
 
@@ -30,11 +45,11 @@ export default function Skills() {
             key={skill.name}
             className="rounded-xl border border-slate-800 bg-slate-900 p-6"
           >
-            <h3 className="text-lg font-semibold text-teal-400">
+            <h2 className="text-xl font-semibold text-white">
               {skill.name}
-            </h3>
+            </h2>
 
-            <p className="mt-2 text-sm leading-relaxed text-slate-300">
+            <p className="mt-3 leading-relaxed text-slate-300">
               {skill.description}
             </p>
           </li>
