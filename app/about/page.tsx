@@ -5,7 +5,6 @@ const graduateStudies = [
   "Operations Management",
   "Project Management",
   "Continuous Improvement",
-  "Lean Six Sigma",
   "Organizational Dynamics",
 ];
 
