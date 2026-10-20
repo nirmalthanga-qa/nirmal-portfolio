@@ -19,7 +19,7 @@ export default function AboutPage() {
       </h1>
 
       <div className="mt-8 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
-        <div className="order-2 min-w-0 space-y-5 text-justify text-lg leading-relaxed text-slate-300 lg:order-1">
+        <div className="order-2 min-w-0 space-y-3 md:space-y-5 text-left md:text-justify text-lg leading-relaxed text-slate-300 lg:order-1">
           <p>
             I’m{" "}
             <span className="font-semibold text-teal-400">
@@ -164,7 +164,7 @@ export default function AboutPage() {
             Beyond work
           </h2>
 
-          <p className="mt-4 text-lg leading-relaxed text-justify text-slate-300">
+          <p className="mt-4 text-lg leading-relaxed text-left md:text-justify text-slate-300">
             Outside quality engineering, my interests include art, automotive,
             and travel. I enjoy exploring creativity, technology, and new
             places—interests that bring a different perspective to my life

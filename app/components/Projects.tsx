@@ -101,15 +101,13 @@ export default function Projects() {
           <ProjectCard
             title="Personal portfolio"
             description="My personal website showcasing my quality engineering
-              experience, skills, and development journey. Planned additions
-              include a blog, Playwright tests, and a CI pipeline."
+              experience, skills, and development journey."
             technologies={[
               "Next.js",
               "React",
               "TypeScript",
               "Tailwind CSS",
             ]}
-            status="In progress"
           />
         </div>
       </section>
