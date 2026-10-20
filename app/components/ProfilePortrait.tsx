@@ -74,10 +74,12 @@ export default function ProfilePortrait() {
           }}
         >
           <Image
-            src="/nirmal-profile.jpg"
+            data-testid="profile-photo"
+            src="/nirmal-profile.webp"
             alt="Nirmal Kumar"
             fill
-            sizes="(max-width: 768px) 80vw, 304px"
+            preload
+            sizes="(max-width: 440px) 75vw, 304px"
             className="object-cover object-center"
           />
         </div>
