@@ -1,3 +1,5 @@
+import ContactIllustration from "./ContactIllustration";
+
 const contact = {
   email: "nirmalthanga.qa@gmail.com",
   github: "https://github.com/nirmalthanga-qa",
@@ -39,6 +41,10 @@ export default function Contact() {
         <a href={contact.linkedin} className={linkStyle}>
           LinkedIn
         </a>
+      </div>
+
+      <div className="mt-12 ml-auto w-full max-w-sm">
+        <ContactIllustration />
       </div>
     </section>
   );

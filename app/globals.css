@@ -1,84 +1,175 @@
 @import "tailwindcss";
-
+/* Charcoal and orange portfolio theme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --portfolio-background: #1e2328;
+  --portfolio-surface: #252b32;
+  --portfolio-text: #f8fafc;
+  --portfolio-muted: #b6bbc2;
+  --portfolio-border: #414952;
+  --portfolio-accent: #f45520;
+  --portfolio-accent-hover: #ff7546;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Page backgrounds */
+body,
+main,
+.bg-slate-950,
+.bg-slate-900,
+.bg-portfolio-bg {
+  background-color: var(--portfolio-background);
+  color: var(--portfolio-text);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Navbar and footer */
+header:has(nav[aria-label="Main navigation"]),
+footer {
+  background-color: #191e23;
+  color: var(--portfolio-text);
+  border-color: var(--portfolio-border);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Main text */
+:is(header, main, footer) :is(
+  h1, h2, h3,
+  .text-white,
+  .text-slate-50,
+  .text-slate-200,
+  .text-portfolio-text
+) {
+  color: var(--portfolio-text);
 }
 
-.project-card {
-  padding: 1.5rem;
-  border: 1px solid #334155;
-  border-radius: 0.75rem;
-  background-color: #1e293b;
-  color: #f8fafc;
+/* Supporting text */
+:is(header, main, footer) :is(
+  .text-slate-300,
+  .text-slate-400,
+  .text-portfolio-muted
+) {
+  color: var(--portfolio-muted);
 }
 
-.technology-badge {
-  padding: 0.25rem 0.75rem;
-  border: 1px solid #334155;
-  border-radius: 9999px;
-  background-color: #0f172a;
-  color: #bae6fd;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
+/* Orange text accents */
+:is(header, main, footer) :is(
+  .text-teal-400,
+  .text-sky-400,
+  .text-sky-200,
+  .text-portfolio-accent
+) {
+  color: var(--portfolio-accent);
 }
 
-html {
-  scroll-behavior: smooth;
+/* Cards and form panels */
+main :is(
+  article,
+  li.bg-slate-900,
+  li.bg-slate-800,
+  section.bg-slate-800,
+  form,
+  .project-card,
+  .bg-portfolio-surface
+) {
+  background-color: var(--portfolio-surface);
+  border-color: var(--portfolio-border);
+  color: var(--portfolio-text);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+/* Technology and interest badges */
+main :is(.technology-badge, li.rounded-full) {
+  background-color: #303740;
+  border-color: #49525c;
+  color: #e2e5e9;
 }
 
+/* Borders */
+:is(header, main, footer) :is(
+  .border-slate-600,
+  .border-slate-700,
+  .border-slate-800,
+  .border-portfolio-border
+) {
+  border-color: var(--portfolio-border);
+}
+
+/* Primary buttons: dark text for contrast */
+:is(header, main, footer) :is(
+  .bg-teal-400,
+  .bg-sky-400,
+  .bg-portfolio-accent
+) {
+  background-color: var(--portfolio-accent);
+  color: #111827;
+}
+
+:is(header, main, footer) :is(
+  .bg-teal-400,
+  .bg-sky-400,
+  .bg-portfolio-accent
+):hover {
+  background-color: var(--portfolio-accent-hover);
+  color: #111827;
+}
+
+/* Link and outlined-button hover */
+:is(header, main, footer) :is(
+  .hover\:text-teal-400,
+  .hover\:text-sky-400,
+  .hover\:text-sky-300,
+  .hover\:text-portfolio-accent
+):hover {
+  color: var(--portfolio-accent-hover);
+}
+
+:is(header, main, footer) :is(
+  .hover\:border-teal-400,
+  .hover\:border-sky-400
+):hover {
+  border-color: var(--portfolio-accent);
+}
+
+/* Inputs */
+main input {
+  background-color: #191e23;
+  color: var(--portfolio-text);
+  border-color: #59636e;
+}
+
+main input::placeholder {
+  color: #a0a9b3;
+}
+
+/* Keyboard focus */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--portfolio-accent);
+  outline-offset: 4px;
+}
+
+main input:focus {
+  border-color: var(--portfolio-accent);
+  box-shadow: none;
+}
+
+/* Homepage: subtle grid matching the reference */
 .home-hero {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  align-items: center;
-
+  background-color: var(--portfolio-background);
   background-image:
     linear-gradient(
-      90deg,
-      rgba(15, 23, 42, 0.8),
-      rgba(15, 23, 42, 0.15)
+      to right,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
     ),
-    url("/automation-background.png");
-
-  background-size: cover;
-  background-position: center right;
-  background-repeat: no-repeat;
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+  background-size: 80px 80px;
+  background-position: center;
+  background-repeat: repeat;
 }
 
-@media (max-width: 640px) {
-  .home-hero {
-    background-image:
-      linear-gradient(
-        rgba(15, 23, 42, 0.75),
-        rgba(15, 23, 42, 0.75)
-      ),
-      url("/automation-background.png");
-  }
+::selection {
+  background-color: var(--portfolio-accent);
+  color: #111827;
 }

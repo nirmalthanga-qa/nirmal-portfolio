@@ -14,6 +14,7 @@ const healthcareProjects = [
       "Selenium",
       "Cypress",
       "Postman",
+      "BDD",
     ],
   },
   {
@@ -59,7 +60,7 @@ export default function Projects() {
       </h1>
 
       <p className="mt-4 text-lg text-portfolio-muted">
-        Healthcare projects and my personal development journey.
+        Software QA projects and my personal development journey.
       </p>
 
       <section

@@ -3,7 +3,7 @@ const skills = [
     name: "Software QA Concepts",
     description:
       "SDLC, STLC, test planning, test design techniques, defect lifecycle, " +
-      "functional testing, regression testing, smoke testing, and exploratory testing",
+      "functional testing, regression testing, smoke testing, and exploratory testing.",
   },
   { name: "TypeScript", description: "Building maintainable automation code using type safety, interfaces, reusable functions, and asynchronous programming." },
   { name: "Playwright", description: "Automating UI and API tests with reliable locators, assertions, fixtures, and cross-browser execution." },
@@ -45,7 +45,7 @@ export default function Skills() {
             key={skill.name}
             className="rounded-xl border border-slate-800 bg-slate-900 p-6"
           >
-            <h2 className="text-xl font-semibold text-white">
+            <h2 className="text-xl font-semibold text-teal-400">
               {skill.name}
             </h2>
 
