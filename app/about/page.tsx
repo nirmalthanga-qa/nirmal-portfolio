@@ -132,6 +132,27 @@ export default function AboutPage() {
       </section>
 
       <section
+        data-testid="certification-section"
+        aria-labelledby="certification-heading"
+        className="mt-12 rounded-xl border border-slate-700 bg-slate-800 p-6 sm:p-8"
+      >
+        <h2
+          id="certification-heading"
+          className="text-2xl font-semibold text-teal-400"
+        >
+          Certification
+        </h2>
+
+        <h3 className="mt-4 text-xl font-semibold text-white">
+          Graduate Certification in Lean Six Sigma
+        </h3>
+
+        <p className="mt-2 text-slate-300">
+          American Society for Quality, USA
+        </p>
+      </section>
+
+      <section
         aria-labelledby="interests-heading"
         className="mt-12 grid items-center gap-10 lg:grid-cols-2"
       >
