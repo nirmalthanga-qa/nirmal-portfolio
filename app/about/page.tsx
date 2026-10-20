@@ -2,9 +2,9 @@ import ProfilePortrait from "../components/ProfilePortrait";
 
 const graduateStudies = [
   "Software Quality Assurance",
-  "Technology Management",
   "Operations Management",
   "Project Management",
+  "Continuous Improvement",
   "Lean Six Sigma",
   "Organizational Dynamics",
 ];

@@ -22,7 +22,7 @@ export default function Home() {
             </h2>
 
             <p className="mt-3 text-lg leading-relaxed text-slate-300">
-              TypeScript · Playwright · Postman · GitHub Actions · Docker
+              TypeScript · Playwright · Postman · GitHub Actions · Docker · AI
             </p>
           </div>
 
