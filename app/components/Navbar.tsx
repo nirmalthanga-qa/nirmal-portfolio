@@ -28,7 +28,7 @@ export default function Navbar() {
             |
           </span>
 
-          <div className="text-base font-semibold text-teal-400 sm:min-w-[15rem]">
+          <div className="text-xl font-semibold text-teal-400 sm:min-w-[15rem]">
             <RotatingRole />
           </div>
         </div>

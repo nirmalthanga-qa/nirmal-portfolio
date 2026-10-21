@@ -4,8 +4,7 @@ import { useEffect, useState } from "react";
 
 const roles = [
   { prefix: "Senior ", title: "SDET" },
-  { prefix: "Senior ", title: "Quality Engineer" },
-  { prefix: "", title: "AI Quality Engineer" },
+  { prefix: "", title: "AI-Driven Quality Engineer" },
 ];
 
 export default function RotatingRole() {
