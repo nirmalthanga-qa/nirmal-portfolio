@@ -16,10 +16,10 @@ export default function Navbar() {
         aria-label="Main navigation"
         className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 py-5"
       >
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-2">
           <Link
             href="/"
-            className="text-xl font-bold text-white"
+            className="whitespace-nowrap text-sm font-bold text-white sm:text-xl"
           >
             Nirmal Kumar
           </Link>
@@ -28,7 +28,7 @@ export default function Navbar() {
             |
           </span>
 
-          <div className="text-xl font-semibold text-teal-400 sm:min-w-[15rem]">
+          <div className="whitespace-nowrap text-sm font-semibold text-teal-400 sm:min-w-[15rem] sm:text-xl">
             <RotatingRole />
           </div>
         </div>
