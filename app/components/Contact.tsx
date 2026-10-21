@@ -17,34 +17,53 @@ export default function Contact() {
   return (
     <section
       id="contact"
+      data-testid="contact-page"
       aria-labelledby="contact-heading"
-      className="border-t border-portfolio-border mx-auto w-full max-w-7xl px-6 py-20"
+      className="mx-auto w-full max-w-7xl px-6 py-20"
     >
-      <h1 id="contact-heading" className="text-3xl font-bold">
-        Let’s connect
-      </h1>
+      <div className="grid items-center gap-12 lg:grid-cols-2">
+        {/* Left: heading, description, and links */}
+        <div className="min-w-0">
+          <h1 id="contact-heading" className="text-3xl font-bold">
+            Let’s connect
+          </h1>
 
-      <p className="mt-4 max-w-2xl text-lg leading-relaxed text-portfolio-muted">
-        Interested in discussing quality engineering, test automation,
-        or something I’m building? Get in touch.
-      </p>
+          <p className="mt-4 max-w-2xl text-lg leading-relaxed text-portfolio-muted">
+            Interested in discussing quality engineering, test automation,
+            or something I’m building? Get in touch.
+          </p>
 
-      <div className="mt-8 flex flex-wrap gap-4">
-        <a href={`mailto:${contact.email}`} className={linkStyle}>
-          Email me
-        </a>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <a
+              href={`mailto:${contact.email}`}
+              data-testid="contact-email"
+              className={linkStyle}
+            >
+              Email me
+            </a>
 
-        <a href={contact.github} className={linkStyle}>
-          GitHub
-        </a>
+            <a
+              href={contact.github}
+              data-testid="contact-github"
+              className={linkStyle}
+            >
+              GitHub
+            </a>
 
-        <a href={contact.linkedin} className={linkStyle}>
-          LinkedIn
-        </a>
-      </div>
+            <a
+              href={contact.linkedin}
+              data-testid="contact-linkedin"
+              className={linkStyle}
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
 
-      <div className="mt-12 ml-auto w-full max-w-sm">
-        <ContactIllustration />
+        {/* Right: illustration */}
+        <div className="w-full min-w-0 max-w-sm justify-self-end">
+          <ContactIllustration />
+        </div>
       </div>
     </section>
   );

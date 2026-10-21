@@ -29,7 +29,7 @@ export default function Skills() {
     <section
       id="skills"
       aria-labelledby="skills-heading"
-      className="border-t border-portfolio-border mx-auto w-full max-w-7xl px-6 py-20"
+      className="border-portfolio-border mx-auto w-full max-w-7xl px-6 py-20"
     >
       <h1 id="skills-heading" className="text-3xl font-bold">
         Skills & tools

@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import RotatingRole from "./RotatingRole";
 
 const links = [
@@ -10,6 +13,8 @@ const links = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+
   return (
     <header className="border-b border-slate-700">
       <nav
@@ -34,15 +39,28 @@ export default function Navbar() {
         </div>
 
         <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-slate-300">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="transition-colors hover:text-teal-400"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" &&
+                pathname.startsWith(`${link.href}/`));
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                data-testid={`nav-${link.label.toLowerCase()}`}
+                aria-current={isActive ? "page" : undefined}
+                className={`border-b-2 pb-1 transition-colors ${
+                  isActive
+                    ? "border-current font-semibold text-teal-400"
+                    : "border-transparent hover:text-teal-400"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </div>
       </nav>
     </header>
