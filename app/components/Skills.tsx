@@ -55,6 +55,44 @@ export default function Skills() {
           </li>
         ))}
       </ul>
+      {/* Soft Skills */}
+      <article
+        data-testid="soft-skills-card"
+        className="mt-8 rounded-xl border border-slate-700 bg-slate-800 p-6"
+      >
+        <h2 className="text-xl font-semibold text-teal-400">
+          Soft Skills
+        </h2>
+
+        <p className="mt-3 leading-relaxed text-slate-300">
+          Building strong working relationships, supporting teams, and approaching
+          challenges with empathy, clarity, and sound judgment.
+        </p>
+
+        <ul
+          aria-label="Soft skills"
+          className="mt-5 flex flex-wrap gap-2"
+        >
+          {[
+            "Communication",
+            "Active Listening",
+            "Negotiation",
+            "Leadership",
+            "Conflict Resolution",
+            "Mentoring",
+            "Critical Thinking",
+            "Adaptability",
+            "Emotional Intelligence",
+          ].map((skill) => (
+            <li
+              key={skill}
+              className="rounded-full bg-slate-900 px-3 py-1 text-sm text-slate-300"
+            >
+              {skill}
+            </li>
+          ))}
+        </ul>
+      </article>
     </section>
   );
 }

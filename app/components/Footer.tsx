@@ -14,9 +14,18 @@ export default function Footer() {
     return (
         <footer className="border-t border-slate-700">
             <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-8">
-                <p className="max-w-xl text-sm text-slate-300">
-                    Thanks for stopping by. Let’s put quality at the heart of software.
-                </p>
+                <div className="space-y-2">
+                    <p className="max-w-xl text-sm text-slate-300">
+                        Thanks for stopping by. Let’s put quality at the heart of software.
+                    </p>
+
+                    <p
+                        data-testid="footer-copyright"
+                        className="text-xs text-slate-400"
+                    >
+                        © 2026 Nirmal Kumar. All rights reserved.
+                    </p>
+                </div>
 
                 <div className="flex flex-wrap items-center gap-3">
                     <a

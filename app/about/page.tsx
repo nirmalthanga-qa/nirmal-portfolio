@@ -104,7 +104,7 @@ export default function AboutPage() {
           id="education-heading"
           className="text-2xl font-semibold text-teal-400"
         >
-          Education & academic foundation
+          Education
         </h2>
 
         <h3 className="mt-4 text-xl font-semibold text-white">
@@ -150,6 +150,33 @@ export default function AboutPage() {
           American Society for Quality, USA
         </p>
       </section>
+
+      <details
+        data-testid="bachelor-degree-reveal"
+        className="group mt-6 rounded-xl border border-slate-700 bg-slate-800 p-5"
+      >
+        <summary
+          data-testid="bachelor-degree-toggle"
+          className="cursor-pointer text-sm font-semibold text-teal-400"
+        >
+          ⚙️ Before the code… discover where it started
+        </summary>
+
+        <div className="mt-4" data-testid="bachelor-degree-content">
+          <h3 className="text-lg font-semibold text-white">
+            Bachelor of Engineering in Mechanical Engineering
+          </h3>
+
+          <p className="mt-2 text-slate-300">
+            Anna University, India
+          </p>
+
+          <p className="mt-2 text-sm leading-relaxed text-slate-300">
+            From understanding how machines work to exploring how software behaves
+            — an engineering journey driven by curiosity and problem-solving.
+          </p>
+        </div>
+      </details>
 
       <section
         aria-labelledby="interests-heading"
