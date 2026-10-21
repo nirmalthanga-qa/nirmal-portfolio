@@ -64,6 +64,7 @@ main :is(
   li.bg-slate-900,
   li.bg-slate-800,
   section.bg-slate-800,
+  details.bg-slate-800,
   form,
   .project-card,
   .bg-portfolio-surface
@@ -172,4 +173,9 @@ main input:focus {
 ::selection {
   background-color: var(--portfolio-accent);
   color: #111827;
+}
+
+/* Accessible orange for the bachelor-degree reveal */
+main details[data-testid="bachelor-degree-reveal"] > summary {
+  color: #ff946b;
 }
