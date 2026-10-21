@@ -79,6 +79,7 @@ export default function ProfilePortrait() {
             alt="Nirmal Kumar"
             fill
             preload
+            fetchPriority="high"
             sizes="(max-width: 440px) 75vw, 304px"
             className="object-cover object-center"
           />

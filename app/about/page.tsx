@@ -179,10 +179,11 @@ export default function AboutPage() {
       </details>
 
       <section
+        data-testid="interests-section"
         aria-labelledby="interests-heading"
-        className="mt-12 grid items-center gap-10 lg:grid-cols-2"
+        className="mt-12 grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_auto]"
       >
-        {/* Left column: description */}
+        {/* Left: description */}
         <div>
           <h2
             id="interests-heading"
@@ -192,19 +193,26 @@ export default function AboutPage() {
           </h2>
 
           <p className="mt-4 text-lg leading-relaxed text-left md:text-justify text-slate-300">
-            Outside quality engineering, my interests include art, automotive,
-            and travel. I enjoy exploring creativity, technology, and new
-            places—interests that bring a different perspective to my life
-            beyond software.
+            Outside quality engineering, I enjoy{" "}
+            <span className="font-semibold text-white">Art</span>
+            {" "}and the{" "}
+            <span className="font-semibold text-white">Automotive</span>
+            {" "}world. Art lets me explore creativity and expression, while my
+            interest in cars and motorcycles connects with my mechanical engineering
+            background. Both reflect my appreciation for thoughtful design,
+            attention to detail, and how things work.
           </p>
         </div>
 
-        {/* Right column: interest illustrations */}
-        <div className="grid grid-cols-3 gap-3 sm:gap-5">
+        {/* Right: interest illustrations */}
+        <div className="flex justify-self-center gap-6 sm:gap-8 lg:justify-self-end">
           {/* Art */}
-          <div className="flex flex-col items-center gap-3">
+          <div
+            data-testid="interest-art"
+            className="flex w-20 flex-col items-center gap-3"
+          >
             <div
-              className="flex aspect-square w-full max-w-20 items-center justify-center rounded-2xl border"
+              className="flex h-20 w-20 items-center justify-center rounded-2xl border"
               style={{
                 backgroundColor: "#252B32",
                 borderColor: "#414952",
@@ -236,9 +244,12 @@ export default function AboutPage() {
           </div>
 
           {/* Automotive */}
-          <div className="flex flex-col items-center gap-3">
+          <div
+            data-testid="interest-automotive"
+            className="flex w-20 flex-col items-center gap-3"
+          >
             <div
-              className="flex aspect-square w-full max-w-20 items-center justify-center rounded-2xl border"
+              className="flex h-20 w-20 items-center justify-center rounded-2xl border"
               style={{
                 backgroundColor: "#252B32",
                 borderColor: "#414952",
@@ -286,35 +297,6 @@ export default function AboutPage() {
 
             <span className="text-sm font-medium text-slate-300">
               Automotive
-            </span>
-          </div>
-
-          {/* Travel */}
-          <div className="flex flex-col items-center gap-3">
-            <div
-              className="flex aspect-square w-full max-w-20 items-center justify-center rounded-2xl border"
-              style={{
-                backgroundColor: "#252B32",
-                borderColor: "#414952",
-              }}
-            >
-              <svg
-                viewBox="0 0 24 24"
-                className="h-10 w-10"
-                fill="none"
-                stroke="#FF946B"
-                strokeWidth="1.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path d="M17.8 8.2 20 6c2-2 2-4 1-5s-3-1-5 1l-2.2 2.2L3 2 1 4l8 5-5 5-3-1-1 1 4 3 3 4 1-1-1-3 5-5 5 8 2-2-2.2-10.8Z" />
-              </svg>
-            </div>
-
-            <span className="text-sm font-medium text-slate-300">
-              Travel
             </span>
           </div>
         </div>
