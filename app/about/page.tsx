@@ -23,7 +23,7 @@ export default function AboutPage() {
           <p>
             I’m{" "}
             <span className="font-semibold text-teal-400">
-              Nirmal Kumar
+              Nirmal Kumar Thangaraju
             </span>
             , a Senior Software Development Engineer in Test with 8 years
             of experience in quality engineering. My work focuses on
