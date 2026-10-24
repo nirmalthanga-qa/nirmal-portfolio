@@ -79,7 +79,7 @@ export default function AboutPage() {
             testing with k6 and exploring AI quality engineering,
             AI-assisted test design, and AI agents. Building this
             portfolio is also part of my learning journey—expanding my
-            skills in Python and AI Engineering.
+            skills in AI Engineering.
           </p>
 
           <p>
