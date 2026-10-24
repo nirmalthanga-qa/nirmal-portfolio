@@ -97,11 +97,29 @@ export default function Projects() {
           Personal projects
         </h2>
 
-        <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div className="mt-6 grid grid-cols-1 gap-6"> 
+          <ProjectCard
+          title="SDET Practice Lab"
+          description="A hands-on learning platform in development for aspiring
+            and experienced SDETs. Planned features include a practice shopping
+            application, UI and API automation exercises, accessibility testing,
+            CI/CD workflows, and AI-assisted quality engineering."
+          technologies={[
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Playwright",
+            "axe-core",
+            "GitHub Actions",
+            "Docker",
+          ]}
+          status="In progress"
+        />
           <ProjectCard
             title="Personal portfolio"
             description="My personal website showcasing my quality engineering
-              experience, skills, and development journey."
+            experience, skills, and development journey."
             technologies={[
               "Next.js",
               "React",
