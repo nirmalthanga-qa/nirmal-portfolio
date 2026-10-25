@@ -25,7 +25,12 @@ export const metadata: Metadata = {
   },
   description:
     "Explore Nirmal Kumar Thangaraju’s portfolio: 8 years in quality engineering, Playwright automation, API testing, and US Federal Healthcare IT projects.",
+
+  verification: {
+    google: "l67Q15-nc-LfBfPonmOoGfb2aD2MhdInS6CwfOv292Y",
+  },
 };
+
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
