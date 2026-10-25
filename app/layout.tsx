@@ -15,9 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nirmal | SDET - Quality",
+  metadataBase: new URL(
+    "https://nirmal-portfolio-azure.vercel.app"
+  ),
+  title: {
+    default:
+      "Nirmal Kumar Thangaraju | Senior SDET & Quality Engineer",
+    template: "%s | Nirmal Kumar Thangaraju",
+  },
   description:
-    "Nirmal’s personal portfolio: 8 years in quality engineering, with experience in Playwright, TypeScript, API testing, GitHub Actions, and Docker.",
+    "Explore Nirmal Kumar Thangaraju’s portfolio: 8 years in quality engineering, Playwright automation, API testing, and US Federal Healthcare IT projects.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,4 +1,5 @@
 import ProfilePortrait from "../components/ProfilePortrait";
+import type { Metadata } from "next";
 
 const graduateStudies = [
   "Software Quality Assurance",
@@ -7,6 +8,11 @@ const graduateStudies = [
   "Continuous Improvement",
   "Organizational Dynamics",
 ];
+export const metadata: Metadata = {
+  title: "About",
+  description:
+    "Meet Nirmal Kumar Thangaraju, a Senior SDET with 8 years of quality engineering experience and a Master of Science in Technology.",
+};
 
 export default function AboutPage() {
   return (
