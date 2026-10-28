@@ -101,7 +101,8 @@ export default function Projects() {
           <ProjectCard
           title="SDET Practice Lab"
           description="A hands-on learning platform in development for aspiring
-            and experienced SDETs. visit https://sdet-practice-lab.onrender.com/"
+            and experienced SDETs."
+          href="https://sdet-practice-lab.onrender.com/"
           technologies={[
             "Next.js",
             "React",

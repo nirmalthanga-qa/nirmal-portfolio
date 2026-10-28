@@ -3,6 +3,7 @@ type ProjectCardProps = {
   description: string;
   technologies: string[];
   status?: string;
+  href?: string;
 };
 
 export default function ProjectCard({
@@ -10,6 +11,7 @@ export default function ProjectCard({
   description,
   technologies,
   status,
+  href,
 }: ProjectCardProps) {
   return (
     <article className="rounded-xl border border-slate-800 p-6">
@@ -38,6 +40,19 @@ export default function ProjectCard({
           </li>
         ))}
       </ul>
+      {href && (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-testid="project-live-link"
+          className="mt-5 inline-flex items-center gap-2 font-semibold text-white underline underline-offset-4 hover:text-teal-400"
+        >
+          Visit {title}
+          <span aria-hidden="true">↗</span>
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
+      )}
     </article>
   );
 }
