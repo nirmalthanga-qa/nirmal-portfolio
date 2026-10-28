@@ -49,7 +49,7 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={() => setMenuOpen(false)}
-              className="text-sm font-bold text-white sm:text-xl"
+              className="text-xl font-bold text-white"
             >
               Nirmal Kumar
             </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
               |
             </span>
 
-            <div className="text-sm font-semibold text-teal-400 sm:text-xl">
+            <div className="text-xl font-semibold text-teal-400">
               <RotatingRole />
             </div>
           </div>
