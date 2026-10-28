@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import RotatingRole from "./RotatingRole";
 
 const links = [
@@ -14,53 +15,127 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  function linkStyle(href: string) {
+    const active =
+      pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
+
+    return {
+      active,
+      className: `border-b-2 pb-1 transition-colors ${
+        active
+          ? "border-current font-semibold text-teal-400"
+          : "border-transparent text-slate-300 hover:text-teal-400"
+      }`,
+    };
+  }
 
   return (
-    <header className="border-b border-slate-700">
+    <header>
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6 py-5"
+        className="mx-auto max-w-7xl px-6 py-5"
+        onKeyDown={(event) => {
+          if (event.key === "Escape" && menuOpen) {
+            setMenuOpen(false);
+            document.getElementById("mobile-menu-toggle")?.focus();
+          }
+        }}
       >
-        <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-2">
-          <Link
-            href="/"
-            className="whitespace-nowrap text-sm font-bold text-white sm:text-xl"
+        <div className="flex items-center justify-between gap-4">
+          {/* Name and rotating role */}
+          <div className="flex min-w-0 flex-col gap-1 lg:flex-row lg:items-center lg:gap-3">
+            <Link
+              href="/"
+              onClick={() => setMenuOpen(false)}
+              className="text-sm font-bold text-white sm:text-xl"
+            >
+              Nirmal Kumar
+            </Link>
+
+            <span
+              aria-hidden="true"
+              className="hidden text-slate-400 lg:inline"
+            >
+              |
+            </span>
+
+            <div className="text-sm font-semibold text-teal-400 sm:text-xl">
+              <RotatingRole />
+            </div>
+          </div>
+
+          {/* Mobile menu button */}
+          <button
+            id="mobile-menu-toggle"
+            type="button"
+            data-testid="mobile-menu-toggle"
+            aria-label={menuOpen ? "Close navigation" : "Open navigation"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMenuOpen((open) => !open)}
+            className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-slate-700 text-white lg:hidden"
           >
-            Nirmal Kumar
-          </Link>
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              className="h-6 w-6"
+              aria-hidden="true"
+            >
+              {menuOpen ? (
+                <path d="M6 6l12 12M18 6L6 18" />
+              ) : (
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
 
-          <span aria-hidden="true" className="text-slate-400">
-            |
-          </span>
+          {/* Desktop links */}
+          <div className="hidden items-center gap-6 text-sm font-medium lg:flex">
+            {links.map((link) => {
+              const { active, className } = linkStyle(link.href);
 
-          <div className="whitespace-nowrap text-sm font-semibold text-teal-400 sm:min-w-[15rem] sm:text-xl">
-            <RotatingRole />
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={className}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-slate-300">
-          {links.map((link) => {
-            const isActive =
-              pathname === link.href ||
-              (link.href !== "/" &&
-                pathname.startsWith(`${link.href}/`));
+        {/* Mobile links */}
+        <div
+          id="mobile-navigation"
+          hidden={!menuOpen}
+          className="mt-5 lg:hidden"
+        >
+          <div className="flex flex-col items-start gap-5 text-sm font-medium">
+            {links.map((link) => {
+              const { active, className } = linkStyle(link.href);
 
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                data-testid={`nav-${link.label.toLowerCase()}`}
-                aria-current={isActive ? "page" : undefined}
-                className={`border-b-2 pb-1 transition-colors ${
-                  isActive
-                    ? "border-current font-semibold text-teal-400"
-                    : "border-transparent hover:text-teal-400"
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  onClick={() => setMenuOpen(false)}
+                  className={className}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </nav>
     </header>
